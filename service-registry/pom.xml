@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>department-service</artifactId>
+    <artifactId>service-registry</artifactId>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
@@ -19,17 +19,10 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-
-        <!-- service registry-->
-        <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
             <version>3.1.3</version>
         </dependency>
-        <!-- end service registry-->
     </dependencies>
 
     <dependencyManagement>
