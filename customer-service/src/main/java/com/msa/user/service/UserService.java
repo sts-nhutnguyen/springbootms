@@ -24,7 +24,7 @@ public class UserService{
         users.add(user);
 
         // Call notification service to send notification
-        String message = restTemplate.getForObject("http://localhost:9003/notification/"+user.getId()+"/?target-type=user", String.class);
+        String message = restTemplate.getForObject("http://NOTIFICATION-SERVICE/notification/"+user.getId()+"/?target-type=user", String.class);
 
         System.out.println(message);
 
@@ -42,7 +42,7 @@ public class UserService{
                 .findFirst()
                 .orElseThrow(()->new IllegalStateException("User not found"));
 
-        Department department = restTemplate.getForObject("http://localhost:9001/departments/"+user.getDepartmentId(), Department.class);
+        Department department = restTemplate.getForObject("http://DEPARTMENT-SERVICE/departments/"+user.getDepartmentId(), Department.class);
 
         return new UserDTO(user, department);
     }

@@ -21,7 +21,7 @@ public class DepartmentService{
         department.setId(departments.size()+1);
         departments.add(department);
 
-        String message = restTemplate.getForObject("http://localhost:9003/notification/"+department.getId()+"/?target-type=department", String.class);
+        String message = restTemplate.getForObject("http://NOTIFICATION-SERVICE/notification/"+department.getId()+"/?target-type=department", String.class);
 
         System.out.println(message);
 
@@ -39,7 +39,7 @@ public class DepartmentService{
                 .findFirst()
                 .orElseThrow(()->new IllegalStateException("Department not found"));
 
-        String message = restTemplate.getForObject("http://localhost:9003/notification/"+id+"/?target-type=department", String.class);
+        String message = restTemplate.getForObject("http://NOTIFICATION-SERVICE/notification/"+id+"/?target-type=department", String.class);
 
         System.out.println(message);
 
