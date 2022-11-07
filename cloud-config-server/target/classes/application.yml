@@ -9,6 +9,6 @@ spring:
       server:
         git:
           uri: https://github.com/caominhnhut/springbootms
-          username: git-account-name
-          password: git-password
-          default-label: git-specific-branch
+          username: caominhnhut
+          password: NguyenHuynh456
+          default-label: hystrix

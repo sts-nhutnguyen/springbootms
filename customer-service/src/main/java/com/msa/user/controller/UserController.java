@@ -22,8 +22,8 @@ public class UserController{
     private UserService userService;
 
     @PostMapping
-    public User create(@RequestBody User department){
-        return userService.create(department);
+    public User create(@RequestBody User userDTO){
+        return userService.create(userDTO);
     }
 
     @GetMapping
